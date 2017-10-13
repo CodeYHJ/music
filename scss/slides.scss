@@ -1,0 +1,56 @@
+.slides {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 14px;
+    // min-height: 135px;
+    transition: .5s;
+    transition-duration: .5s;
+    max-height: 150px;
+    .slides-A {
+        display: flex;
+        flex-direction: row;
+        min-height: 135px;
+        transition: 1s;
+        a {
+            display: block;
+            img {
+                display: block;
+                width: 100%;
+                transition: .5s;
+                max-height: 150px;
+            }
+        }
+    }
+    .slides-B {
+        display: flex;
+        flex-direction: row;
+        transition: 1s;
+        a {
+            display: block;
+            img {
+                display: block;
+                width: 100%;
+                transition: .5s;
+            }
+        }
+    }
+    .dot {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        bottom: 6px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        &>span {
+            width: 6px;
+            height: 6px;
+            margin: 0 4px;
+            border-radius: 3px;
+            background: rgba(144,144,144,.8);
+        }
+    }
+}

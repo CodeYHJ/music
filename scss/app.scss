@@ -1,0 +1,17 @@
+@import "rec";
+@import "header";
+@import "tab";
+@import "content";
+@import "slides";
+@import "radio";
+@import "hotSong";
+@import "list";
+@import "search";
+@import "searchSongs";
+@import "play";
+
+body{
+    font: 12px/1.5 "FZLTXIHJW--GB1-0","hiragino sans gb","Helvetica Neue",Helvetica,STHeiTi,Arial;
+    color: #808080;
+    background-color: #fff;
+}

@@ -1,0 +1,72 @@
+.listContent {
+  margin: 10px;
+  overflow: hidden;
+  display: none; }
+  .listContent .lists {
+    display: block; }
+    .listContent .lists .list-item {
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: row;
+      align-items: center; }
+      .listContent .lists .list-item .img {
+        position: relative;
+        width: 100px;
+        height: 100px; }
+        .listContent .lists .list-item .img img {
+          display: block;
+          width: 100%; }
+        .listContent .lists .list-item .img > div {
+          position: absolute;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          width: 65px;
+          left: 5px;
+          bottom: 7px;
+          line-height: 12px;
+          color: #fff; }
+          .listContent .lists .list-item .img > div .listen-icon {
+            width: 10px;
+            height: 10px;
+            margin-right: 5px;
+            display: block;
+            background-position: 0 -50px;
+            background-image: url(../img/radio_list.png);
+            background-repeat: no-repeat;
+            background-size: 24px 60px; }
+          .listContent .lists .list-item .img > div .num {
+            font-size: 9px;
+            line-height: 12px;
+            opacity: .6; }
+
+.listContent .text-content {
+  position: relative;
+  overflow: hidden;
+  flex: 1; }
+  .listContent .text-content .text {
+    margin: 0 10px 0 15px;
+    overflow: hidden; }
+    .listContent .text-content .text h3 {
+      font-size: 16px;
+      color: #000;
+      font-weight: normal;
+      margin-bottom: 5px; }
+    .listContent .text-content .text p {
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.5);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden; }
+      .listContent .text-content .text p .songName {
+        color: #000; }
+  .listContent .text-content .arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -4px;
+    width: 6px;
+    height: 6px;
+    border-right: 1px solid #b2b2b2;
+    border-bottom: 1px solid #b2b2b2;
+    transform: rotate(-45deg); }

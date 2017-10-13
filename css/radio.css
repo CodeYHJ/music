@@ -1,0 +1,45 @@
+.radio {
+  margin: 0 10px 7px 10px;
+  overflow: hidden; }
+  .radio h2 {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 11px; }
+
+.radios {
+  display: flex;
+  flex-direction: row;
+  margin-right: -8px; }
+  .radios a {
+    display: block;
+    min-width: 145px;
+    padding-right: 8px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    flex: 1; }
+    .radios a .img {
+      margin-bottom: 5px;
+      position: relative; }
+      .radios a .img img {
+        display: block;
+        width: 100%; }
+      .radios a .img .icon {
+        position: absolute;
+        display: block;
+        height: 24px;
+        bottom: 5px;
+        right: 5px;
+        width: 24px;
+        background-position: 0 0;
+        background-image: url(../img/radio_list.png);
+        background-repeat: no-repeat;
+        background-size: 24px 60px; }
+    .radios a .title {
+      display: block;
+      height: 36px;
+      line-height: 18px;
+      margin: 0 7px 5px;
+      white-space: normal;
+      font-size: 14px;
+      text-overflow: ellipsis;
+      color: #000; }

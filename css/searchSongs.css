@@ -1,0 +1,59 @@
+.search-songs {
+  display: flex;
+  flex-direction: column; }
+  .search-songs .singerContent {
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid #e5e5e5; }
+    .search-songs .singerContent .singerImg {
+      padding: 0 8px;
+      display: flex;
+      align-items: center; }
+      .search-songs .singerContent .singerImg img {
+        display: block;
+        width: 100%;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px; }
+    .search-songs .singerContent .singer .name {
+      margin: 10px 0 2px;
+      line-height: 18px;
+      font-size: 16px;
+      font-weight: normal;
+      color: #000; }
+    .search-songs .singerContent .singer .num {
+      color: #808080;
+      font-size: 12px; }
+      .search-songs .singerContent .singer .num .songsNumber {
+        margin-right: 10px; }
+  .search-songs .songs-item {
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid #e5e5e5;
+    height: 55px; }
+    .search-songs .songs-item .musicLogo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px; }
+      .search-songs .songs-item .musicLogo span {
+        display: block;
+        width: 22px;
+        height: 20px;
+        background-image: url(../img/search-music.png);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: 22px 30px; }
+    .search-songs .songs-item .song {
+      overflow: hidden; }
+      .search-songs .songs-item .song .songName {
+        margin: 10px 0 2px;
+        line-height: 18px;
+        font-size: 16px;
+        font-weight: normal;
+        color: #000;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden; }
+      .search-songs .songs-item .song .singer {
+        font-size: 12px; }

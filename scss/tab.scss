@@ -1,0 +1,41 @@
+.tab {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    text-align: center;
+    line-height: 40px;
+    font-size: 16px;
+    .recommend {
+        flex: 1;
+        height: 40px;
+        font-size: 16px;
+        position: relative;
+    }
+    .list {
+        flex: 1;
+        height: 40px;
+        font-size: 16px;
+        position: relative;
+    }
+    .search {
+        flex: 1;
+        height: 40px;
+        font-size: 16px;
+        position: relative;
+    }
+    .main {
+        color: #31c27c;
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #31c27c;
+        }
+    }
+}
+
+

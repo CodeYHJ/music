@@ -1,0 +1,78 @@
+.search-songs{
+    display: flex;
+    flex-direction: column;
+    .singerContent{
+        display: flex;
+        flex-direction: row;
+        border-top: 1px solid #e5e5e5;
+        .singerImg{
+            padding: 0 8px;
+            display: flex;
+            align-items: center;
+            img{
+                display: block;
+                width: 100%;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                
+            }
+        }
+        .singer{
+            .name{
+                margin: 10px 0 2px;
+                line-height: 18px;
+                font-size: 16px;
+                font-weight: normal;
+                color: #000;
+            }
+            .num{
+                color: #808080;
+                font-size: 12px;
+                .songsNumber{
+                    margin-right: 10px;
+                    
+                }
+            }
+        }
+    }
+    .songs-item{
+        display: flex;
+        flex-direction: row;
+        border-top: 1px solid #e5e5e5;
+        height: 55px;
+        .musicLogo{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            span{
+               display: block;
+               width: 22px;
+               height: 20px;
+               background: {
+                   image: url(../img/search-music.png);
+                   position: 0 0;
+                   repeat: no-repeat;
+                   size: 22px 30px;
+               } 
+            }
+        }
+        .song{
+            overflow: hidden;
+            .songName{
+                margin: 10px 0 2px;
+                line-height: 18px;
+                font-size: 16px;
+                font-weight: normal;
+                color: #000;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+            .singer{
+                font-size: 12px;
+            }
+        }    
+    }
+}

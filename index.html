@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>QQ 音乐</title>
+    <link rel="stylesheet" href="dist/app.css">
+</head>
+<body>
+    <div class="app">
+        <header>
+            <span class="logo"></span>
+            <span class="playStation">播放器</span>
+        </header>
+        <div class="tab">
+            <div class="recommend main" data-name="recommend">推荐</div>
+            <div class="list" data-name="list">排行榜</div>
+            <div class="search" data-name="search">搜索</div>
+        </div>
+        <div class="recommendContent">
+            <div class="slides">
+                <div class="slides-A"></div>
+                <div class="slides-B"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="radio"></div>
+            <div class="hotSong"></div>
+        </div>
+        <div class="listContent">
+            <ul class="lists"></ul>
+        </div>
+        <div class="searchContent">
+            <div class="search-bar">
+                <div class="input-bar">
+                    <span class="icon"></span>
+                    <input type="search" placeholder="搜索歌曲、歌单、专辑" class="input">  
+                    <span class="delet"></span>   
+                </div>
+                <span class="cancle">取消</span>
+            </div>
+            <ul class="search-songs"></ul>
+            <p class="onloading">正在载入...</p>
+            <p class="ending">已加载全部</p>
+        </div>
+        <div class="play">
+            <div class="background"></div>
+            <div class="opacity"></div> 
+            <div class="playRadio">
+                <div class="ablumHead">
+                    <div>
+                        <img src="#">
+                        <div class="song">
+                            <p class="songName"></p>
+                            <p class="singer"></p>
+                        </div>
+                    </div>
+                    <span class="playButton"></span>
+                </div>
+                <div class="lyc"></div>
+                <div class="control">
+                    <div class="button">
+                        <span></span>
+                        <span class="station"></span>
+                    </div>
+                    <div class="progress">
+                        <span class="startTime">00:00</span>
+                        <div class="progressBox">
+                            <div class="progressbar"></div>
+                        </div>
+                        <span class="endTime">00:00</span>
+                    </div>
+                </div>
+                <div class="btns">
+                    <a href="" class="download">下载这首歌</a>
+                </div>
+            </div>   
+        </div>
+    </div>
+
+    <script type="module" src="script/app.js"></script>
+    <!-- <script src="dist/app.js"></script> -->
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+.slides {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 14px;
+  transition: .5s;
+  transition-duration: .5s;
+  max-height: 150px; }
+  .slides .slides-A {
+    display: flex;
+    flex-direction: row;
+    min-height: 135px;
+    transition: 1s; }
+    .slides .slides-A a {
+      display: block; }
+      .slides .slides-A a img {
+        display: block;
+        width: 100%;
+        transition: .5s;
+        max-height: 150px; }
+  .slides .slides-B {
+    display: flex;
+    flex-direction: row;
+    transition: 1s; }
+    .slides .slides-B a {
+      display: block; }
+      .slides .slides-B a img {
+        display: block;
+        width: 100%;
+        transition: .5s; }
+  .slides .dot {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    bottom: 6px;
+    left: 0;
+    right: 0;
+    text-align: center; }
+    .slides .dot > span {
+      width: 6px;
+      height: 6px;
+      margin: 0 4px;
+      border-radius: 3px;
+      background: rgba(144, 144, 144, 0.8); }

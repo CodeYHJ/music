@@ -1,0 +1,26 @@
+header {
+    height: 44px;
+    background-color: #31c27c;
+    position: relative;
+    .logo {
+        width: 90px;
+        height: 25px;
+        margin: 9px 0 0 10px;
+        float: left;
+        background: {
+            image: url(../img/logo.png);
+            repeat: no-repeat;
+            size: cover;
+        }
+    }
+    .playStation{
+        height: 25px;
+        float: right;
+        padding: 0 10px;
+        margin: 9px 10px 0 0;
+        border: 1px solid #fff;
+        line-height: 25px;
+        border-radius: 20px;
+
+    }
+}
