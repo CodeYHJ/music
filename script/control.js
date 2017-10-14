@@ -79,9 +79,12 @@ export class Control{
     }
     radio(){
         if(!this.$audio) this.$audio = document.createElement('audio');
-        this.$audio.src = `http://dl.stream.qqmusic.qq.com/C400${this.song}.m4a?fromtag=38&vkey=8E06415D08CA12A41842DEC08C230E5D2713138EB063034DD32BAE1253E7B8D34158F0A19A1925CD478CDAC1BDA11C6D99F33150F3D4618F&guid=9029463304`;
+        this.$el.appendChild(this.$audio);
+        console.log(this.$audio);
+        this.$audio.src = `http://ws.stream.qqmusic.qq.com/C400${this.song}.m4a?fromtag=38&vkey=5A2A8FCA5201ACFF896A3B5BD895B30A8F60042B4F23BE8F796FC87AB9D7C46D12E0C856971C23A715A16BF5F55049E22B140C2D1516A48B&guid=9029463304`;
         this.$audio.loop = 'loop';
     }
+
     getSomeOne(el){
         if(el == "interval") return this.text.match(/interval=(\d{1,3})/);
         if(el == "img") return this.text.match(/img=(\w{1,})/);
@@ -156,7 +159,6 @@ export class Control{
         this.$control.querySelector('.endTime').innerHTML = this.timer(this.interval);
     }
     ly(){
-        console.log(this.data);
         document.querySelector('.lyc').innerHTML = `<div class="lycText"></div>`
         let htmlLyc = this.data.map(lyc => {
             return `<p class="lyc-item" data-sec="${this.change(lyc)}">${lyc.slice(10)}</p>`
