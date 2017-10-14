@@ -24,7 +24,6 @@ export class HotSong {
                         </div>              
                     </li>`
         }).join("");
-        console.log(1);
         this.$el.innerHTML = htmlH2;
         document.querySelector('.hotSongs').innerHTML = htmlHotSongs;
     }
