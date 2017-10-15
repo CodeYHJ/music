@@ -80,8 +80,9 @@ export class Control{
     radio(){
         if(!this.$audio) this.$audio = document.createElement('audio');
         this.$el.appendChild(this.$audio);
-        this.$audio.src = `http://ws.stream.qqmusic.qq.com/C400${this.song}.m4a?fromtag=38&vkey=5A2A8FCA5201ACFF896A3B5BD895B30A8F60042B4F23BE8F796FC87AB9D7C46D12E0C856971C23A715A16BF5F55049E22B140C2D1516A48B&guid=9029463304`;
+        this.$audio.src = `http://ws.stream.qqmusic.qq.com/${this.song}.m4a?fromtag=46`;
         this.$audio.loop = 'loop';
+        // http://ws.stream.qqmusic.qq.com/${id}.m4a?fromtag=46
     }
 
     getSomeOne(el){
@@ -89,6 +90,7 @@ export class Control{
         if(el == "img") return this.text.match(/img=(\w{1,})/);
         if(el == "song") return this.text.match(/song=(\w+)/);
         if(el == "lyc") return this.text.match(/lyc=(\d{1,})/);
+        console.log(this.text);
     }
     getLyc(el){
         let div = document.createElement('div');
