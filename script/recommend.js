@@ -20,7 +20,7 @@ export class Slides {
         .then( this.view.bind(this) )
     }
     onloading(el){
-        document.querySelector('.recommend-loading').style.display = el;
+        document.querySelector('.recommendloading').style.display = el;
     }
     view(el) {
         this.onloading('none');

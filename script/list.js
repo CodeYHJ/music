@@ -12,7 +12,7 @@ export class List{
         .then( this.view.bind(this) )
     }
     onloading(el){
-        document.querySelector('.list-loading').style.display = el;
+        document.querySelector('.listloading').style.display = el;
     }
     view(el){
         this.onloading('none');
