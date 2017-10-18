@@ -2,6 +2,10 @@
   margin: 10px;
   overflow: hidden;
   display: none; }
+  .listContent .list-loading {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 30px; }
   .listContent .lists {
     display: block; }
     .listContent .lists .list-item {

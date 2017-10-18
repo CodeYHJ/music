@@ -19,7 +19,11 @@ export class Slides {
         .then(rec => rec.data)
         .then( this.view.bind(this) )
     }
+    onloading(el){
+        document.querySelector('.recommend-loading').style.display = el;
+    }
     view(el) {
+        this.onloading('none');
         let data = el;
         let html = data.slider.map(ex=> {
             return `<a href=${ex.linkUrl}>

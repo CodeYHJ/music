@@ -2,6 +2,11 @@
     margin: 10px;
     overflow: hidden;
     display: none;
+    .list-loading{
+        text-align: center;
+        font-size: 18px;
+        margin-top: 30px;
+    }
     .lists {
         display: block;
         .list-item {

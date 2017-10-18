@@ -11,7 +11,11 @@ export class List{
         .then(lis => lis.data.topList)
         .then( this.view.bind(this) )
     }
+    onloading(el){
+        document.querySelector('.list-loading').style.display = el;
+    }
     view(el){
+        this.onloading('none');
         let data = el;
         let html = data.map(ex => {
             return `<li class="list-item">

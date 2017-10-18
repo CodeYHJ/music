@@ -65,6 +65,11 @@ header {
       height: 2px;
       background: #31c27c; }
 
+.recommendContent .recommend-loading {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 30px; }
+
 .slides {
   position: relative;
   overflow: hidden;
@@ -229,6 +234,10 @@ header {
   margin: 10px;
   overflow: hidden;
   display: none; }
+  .listContent .list-loading {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 30px; }
   .listContent .lists {
     display: block; }
     .listContent .lists .list-item {
