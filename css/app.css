@@ -65,7 +65,7 @@ header {
       height: 2px;
       background: #31c27c; }
 
-.recommendContent .recommend-loading {
+.recommendContent .recommendloading {
   text-align: center;
   font-size: 18px;
   margin-top: 30px; }
@@ -234,7 +234,7 @@ header {
   margin: 10px;
   overflow: hidden;
   display: none; }
-  .listContent .list-loading {
+  .listContent .listloading {
     text-align: center;
     font-size: 18px;
     margin-top: 30px; }
