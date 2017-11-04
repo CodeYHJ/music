@@ -38,11 +38,15 @@ export class Search{
         this.$delet.style.display = "none";
         this.$cancle.style.display = "none";
         this.$searchSongs.innerHTML = "";
+        document.querySelector('.onloading').style.display = 'none';
+        document.querySelector('.ending').style.display = 'none';
     }
     deletClick(event){
         let target = event.target;
         this.$input.value = "";
         this.$searchSongs.innerHTML = "";
+        document.querySelector('.onloading').style.display = 'none';
+        document.querySelector('.ending').style.display = 'none';
     }
     onSearching(){
         this.onloading();
@@ -99,18 +103,19 @@ export class Search{
         if(pageYOffset + document.documentElement.clientHeight > (document.body.scrollHeight - 10) && this.fetch && !this.goFetch) {
                 this.goFetch = true;
                 this.page+=1;
-                console.log(this.page);
-                if(this.$searchSongs.length>0)this.onSearching();
-                if(this.curnum<20) this.fetch = false;
+                // console.log(this.page);
+                // console.log(this.$searchSongs.children.length);
+                if(this.$searchSongs.children.length>0)this.onSearching();
+                if(this.page>=this.curnum) this.fetch = false;
         }
 
     }
     onloading(){
         document.querySelector('.onloading').style.display = 'block';
-        this.Fetch = false;
+        // this.fetch = false;
     }
     ending(){
-        if(this.curnum < 20){
+        if(this.page >= this.curnum){
             document.querySelector('.onloading').style.display = 'none';
             document.querySelector('.ending').style.display = 'block';
         }

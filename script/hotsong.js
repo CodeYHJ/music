@@ -10,18 +10,20 @@ export class HotSong {
 
         let htmlHotSongs = this.data.map(ex=> {
             return `<li class="hotSong-item">
-                        <div class="img">
-                            <img data-src="${ex.picUrl}" src="img/defaultspic.jpg" class="lazyload">
-                            <div>
-                                <span class="listen-icon"></span>
-                                <span class="num">${this.number(ex.accessnum)+ "万"}</span>
+                       <a href="https://y.qq.com/w/taoge.html?ADTAG=myqq&from=myqq&channel=10007100&id=${ex.id}">
+                            <div class="img">
+                                <img data-src="${ex.picUrl}" src="img/defaultspic.jpg" class="lazyload">
+                                <div>
+                                    <span class="listen-icon"></span>
+                                    <span class="num">${this.number(ex.accessnum)+ "万"}</span>
+                                </div>
+                                <span class="icon"></span>
                             </div>
-                            <span class="icon"></span>
-                        </div>
-                        <div class="text">
-                            <span class="title">${ex.songListDesc}</span>
-                            <span class="author">${ex.songListAuthor}</span>
-                        </div>              
+                            <div class="text">
+                                <span class="title">${ex.songListDesc}</span>
+                                <span class="author">${ex.songListAuthor}</span>
+                            </div>  
+                        </a>            
                     </li>`
         }).join("");
         this.$el.innerHTML = htmlH2;

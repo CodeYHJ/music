@@ -16,51 +16,55 @@
     padding-right: 8px;
     margin-bottom: 10px;
     overflow: hidden; }
-    .hotSongs .hotSong-item .img {
-      position: relative;
-      min-height: 145px;
-      margin-bottom: 5px; }
-      .hotSongs .hotSong-item .img img {
-        display: block;
-        width: 100%; }
-      .hotSongs .hotSong-item .img > div {
-        position: absolute;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        left: 5px;
-        bottom: 7px;
-        line-height: 12px;
-        color: #fff; }
-        .hotSongs .hotSong-item .img > div .listen-icon {
-          width: 10px;
-          height: 10px;
-          margin-right: 5px;
+    .hotSongs .hotSong-item a {
+      text-decoration: none; }
+      .hotSongs .hotSong-item a .img {
+        position: relative;
+        min-height: 145px;
+        margin-bottom: 5px; }
+        .hotSongs .hotSong-item a .img img {
           display: block;
-          background-position: 0 -50px;
+          width: 100%; }
+        .hotSongs .hotSong-item a .img > div {
+          position: absolute;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          left: 5px;
+          bottom: 7px;
+          line-height: 12px;
+          color: #fff; }
+          .hotSongs .hotSong-item a .img > div .listen-icon {
+            width: 10px;
+            height: 10px;
+            margin-right: 5px;
+            display: block;
+            background-position: 0 -50px;
+            background-image: url(../img/radio_list.png);
+            background-repeat: no-repeat;
+            background-size: 24px 60px; }
+          .hotSongs .hotSong-item a .img > div .num {
+            font-size: 12px;
+            height: 12px; }
+        .hotSongs .hotSong-item a .img .icon {
+          position: absolute;
+          display: block;
+          height: 24px;
+          bottom: 5px;
+          right: 5px;
+          width: 24px;
+          background-position: 0 0;
           background-image: url(../img/radio_list.png);
           background-repeat: no-repeat;
           background-size: 24px 60px; }
-        .hotSongs .hotSong-item .img > div .num {
-          font-size: 12px;
-          height: 12px; }
-      .hotSongs .hotSong-item .img .icon {
-        position: absolute;
-        display: block;
-        height: 24px;
-        bottom: 5px;
-        right: 5px;
-        width: 24px;
-        background-position: 0 0;
-        background-image: url(../img/radio_list.png);
-        background-repeat: no-repeat;
-        background-size: 24px 60px; }
-    .hotSongs .hotSong-item .text .title {
-      overflow: hidden;
-      display: block;
-      font-size: 14px;
-      white-space: nowrap;
-      text-overflow: ellipsis; }
-    .hotSongs .hotSong-item .text .author {
-      display: block;
-      font-size: 12px; }
+      .hotSongs .hotSong-item a .text {
+        color: black; }
+        .hotSongs .hotSong-item a .text .title {
+          overflow: hidden;
+          display: block;
+          font-size: 14px;
+          white-space: nowrap;
+          text-overflow: ellipsis; }
+        .hotSongs .hotSong-item a .text .author {
+          display: block;
+          font-size: 12px; }

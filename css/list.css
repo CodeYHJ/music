@@ -13,36 +13,40 @@
       display: flex;
       flex-direction: row;
       align-items: center; }
-      .listContent .lists .list-item .img {
-        position: relative;
-        width: 100px;
-        height: 100px; }
-        .listContent .lists .list-item .img img {
-          display: block;
-          width: 100%; }
-        .listContent .lists .list-item .img > div {
-          position: absolute;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          width: 65px;
-          left: 5px;
-          bottom: 7px;
-          line-height: 12px;
-          color: #fff; }
-          .listContent .lists .list-item .img > div .listen-icon {
-            width: 10px;
-            height: 10px;
-            margin-right: 5px;
+      .listContent .lists .list-item a {
+        display: flex;
+        text-decoration: none;
+        flex: 1; }
+        .listContent .lists .list-item a .img {
+          position: relative;
+          width: 100px;
+          height: 100px; }
+          .listContent .lists .list-item a .img img {
             display: block;
-            background-position: 0 -50px;
-            background-image: url(../img/radio_list.png);
-            background-repeat: no-repeat;
-            background-size: 24px 60px; }
-          .listContent .lists .list-item .img > div .num {
-            font-size: 9px;
+            width: 100%; }
+          .listContent .lists .list-item a .img > div {
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 65px;
+            left: 5px;
+            bottom: 7px;
             line-height: 12px;
-            opacity: .6; }
+            color: #fff; }
+            .listContent .lists .list-item a .img > div .listen-icon {
+              width: 10px;
+              height: 10px;
+              margin-right: 5px;
+              display: block;
+              background-position: 0 -50px;
+              background-image: url(../img/radio_list.png);
+              background-repeat: no-repeat;
+              background-size: 24px 60px; }
+            .listContent .lists .list-item a .img > div .num {
+              font-size: 9px;
+              line-height: 12px;
+              opacity: .6; }
 
 .listContent .text-content {
   position: relative;

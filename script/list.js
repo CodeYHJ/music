@@ -18,16 +18,17 @@ export class List{
         this.onloading('none');
         let data = el;
         let html = data.map(ex => {
-            return `<li class="list-item">
-                        <div class="img">
+            return `<li class="list-item" data-id="${ex.id}" data-type="${ex.type}">
+                        <a href="https://y.qq.com/w/toplist.html?ADTAG=myqq&from=myqq&channel=10007100&id=${ex.id}&type=top">
+                            <div class="img">
                             <img data-src=${ex.picUrl} src="img/defaultpic.jpg" class="lazyload">
                             <div>
                                 <span class="listen-icon"></span>
                                 <span class="num">${this.number(ex.listenCount)+"万"}</span>
                             </div>
                     
-                        </div>
-                        <div class="text-content">
+                            </div>
+                            <div class="text-content">
                             <div class="text">
                                 <h3>${ex.topTitle}</h3>
                                 <p>
@@ -47,7 +48,8 @@ export class List{
                                 </p>
                             </div>
                             <span class="arrow"></span>
-                        </div>
+                            </div>
+                        </a>
                     </li>`
         }).join("");
         this.$el.innerHTML = html;
