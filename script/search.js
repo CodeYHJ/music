@@ -101,13 +101,9 @@ export class Search{
         
     } 
     onScroll(){
-        console.log(this.$el.clientHeight)
-        console.log(this.$el.scrollHeight)
         if(pageYOffset + this.$el.clientHeight < (this.$el.scrollHeight - 10) && this.fetch && !this.goFetch) {
                 this.goFetch = true;
                 this.page+=1;
-                // console.log(this.page);
-                // console.log(this.$searchSongs.children.length);
                 if(this.$searchSongs.children.length>0)this.onSearching();
                 if(this.page>=this.curnum) this.fetch = false;
         }
@@ -127,3 +123,5 @@ export class Search{
         } 
     }
 }
+
+console

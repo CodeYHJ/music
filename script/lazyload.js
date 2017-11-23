@@ -1,5 +1,6 @@
 export function lazyload(x) {
     let onscroll =throttle(function() {
+        console.log(1);
         let imgs = document.querySelectorAll('img');
         let i = Array.prototype.filter.call(imgs,(ele)=>{
             return ele.className == "lazyload";
