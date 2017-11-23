@@ -53,7 +53,7 @@ export class List{
                     </li>`
         }).join("");
         this.$el.innerHTML = html;
-        lazyload();
+        lazyload(document.querySelector('.listContent'));
     }
     number(el) {
         return (Math.round(el/1000)/10).toFixed(1);

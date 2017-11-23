@@ -6,7 +6,8 @@ export class Slides {
         this.$el = el;
         this.$slidesA = this.$el.querySelector('.slides-A');
         this.$slidesB = this.$el.querySelector('.slides-B');
-        this.width = document.body.clientWidth;
+        this.width = document.querySelector('.app').clientWidth;
+        this.$recommendContent = document.querySelector('.recommendContent');
         this.n = 0;
         this.m = 0;
         this.time = 0;
@@ -41,7 +42,7 @@ export class Slides {
         this.loopTime();
         let radio = new Radio({el:document.querySelector('.radio'), data:data.radioList});
         let hotSong = new HotSong({el:document.querySelector('.hotSong'), data:data.songList});
-        lazyload();
+        lazyload(this.$recommendContent);
     }
 
     imgWidth() {

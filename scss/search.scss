@@ -1,5 +1,7 @@
 .searchContent{
     display: none;
+    overflow-y: scroll;
+    height: calc(100vh - 84px);
     .search-bar {
         padding:10px;
         background: #f4f4f4;

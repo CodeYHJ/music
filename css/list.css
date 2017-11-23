@@ -1,6 +1,9 @@
 .listContent {
   margin: 10px;
-  overflow: hidden;
+  margin-bottom: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: calc(100vh - 94px);
   display: none; }
   .listContent .listloading {
     text-align: center;
@@ -16,7 +19,8 @@
       .listContent .lists .list-item a {
         display: flex;
         text-decoration: none;
-        flex: 1; }
+        flex: 1;
+        overflow: hidden; }
         .listContent .lists .list-item a .img {
           position: relative;
           width: 100px;

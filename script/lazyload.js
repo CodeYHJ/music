@@ -1,4 +1,4 @@
-export function lazyload() {
+export function lazyload(x) {
     let onscroll =throttle(function() {
         let imgs = document.querySelectorAll('img');
         let i = Array.prototype.filter.call(imgs,(ele)=>{
@@ -11,16 +11,16 @@ export function lazyload() {
             }  
         });
     },500);
-    window.addEventListener('scroll',onscroll);
-    window.dispatchEvent(new Event('scroll'));
+    x.addEventListener('scroll',onscroll);
+    x.dispatchEvent(new Event('scroll'));
 }
 
 
 
 function count(el) {
     let {left,top,right,bottom} = el.getBoundingClientRect();
-    let vpWidth = document.documentElement.clientWidth;
-    let vpHeight = document.documentElement.clientHeight;
+    let vpWidth = document.querySelector('.app').clientWidth;
+    let vpHeight = document.querySelector('.app').clientHeight;
     return (
         (left>0 && left<vpWidth || right>0 && right<vpWidth) && (top>0 && top<vpHeight || bottom>0 && bottom<vpHeight)
     );

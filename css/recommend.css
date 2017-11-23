@@ -1,4 +1,7 @@
-.recommendContent .recommendloading {
-  text-align: center;
-  font-size: 18px;
-  margin-top: 30px; }
+.recommendContent {
+  overflow-y: scroll;
+  height: calc(100vh - 84px); }
+  .recommendContent .recommendloading {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 30px; }

@@ -1,6 +1,7 @@
 export class Search{
     constructor(el){
         this.$el = el;
+        this.$app = document.querySelector('.app');
         this.$input = this.$el.querySelector('input');
         this.$cancle = this.$el.querySelector('.cancle');
         this.$delet = this.$el.querySelector('.delet');
@@ -11,7 +12,7 @@ export class Search{
         this.$input.addEventListener('focus',this.focus);
         this.$cancle.addEventListener('click',this.cancleClick.bind(this));
         this.$delet.addEventListener('click',this.deletClick.bind(this));
-        document.addEventListener('scroll', this.onScroll.bind(this));
+        this.$el.addEventListener('scroll', this.onScroll.bind(this));
         this.fetch = true;
         this.goFetch = false;
         this.curnum;
@@ -100,7 +101,9 @@ export class Search{
         
     } 
     onScroll(){
-        if(pageYOffset + document.documentElement.clientHeight > (document.body.scrollHeight - 10) && this.fetch && !this.goFetch) {
+        console.log(this.$el.clientHeight)
+        console.log(this.$el.scrollHeight)
+        if(pageYOffset + this.$el.clientHeight < (this.$el.scrollHeight - 10) && this.fetch && !this.goFetch) {
                 this.goFetch = true;
                 this.page+=1;
                 // console.log(this.page);

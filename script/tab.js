@@ -10,7 +10,8 @@ document.querySelector(".tab").addEventListener("click", function(event){
         }
         target.classList.add("main");
         document.querySelector(`.${name}Content`).style.display = 'block';
-        window.dispatchEvent(new Event('scroll'));
+        document.querySelector(`.${name}Content`).dispatchEvent(new Event('scroll'));
+
     }
     for(let i=0; i<$tab.children.length; i++) {
         if($tab.children[i].className.match(/main/g)){

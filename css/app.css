@@ -65,10 +65,13 @@ header {
       height: 2px;
       background: #31c27c; }
 
-.recommendContent .recommendloading {
-  text-align: center;
-  font-size: 18px;
-  margin-top: 30px; }
+.recommendContent {
+  overflow-y: scroll;
+  height: calc(100vh - 84px); }
+  .recommendContent .recommendloading {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 30px; }
 
 .slides {
   position: relative;
@@ -236,7 +239,10 @@ header {
 
 .listContent {
   margin: 10px;
-  overflow: hidden;
+  margin-bottom: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: calc(100vh - 94px);
   display: none; }
   .listContent .listloading {
     text-align: center;
@@ -252,7 +258,8 @@ header {
       .listContent .lists .list-item a {
         display: flex;
         text-decoration: none;
-        flex: 1; }
+        flex: 1;
+        overflow: hidden; }
         .listContent .lists .list-item a .img {
           position: relative;
           width: 100px;
@@ -316,7 +323,9 @@ header {
     transform: rotate(-45deg); }
 
 .searchContent {
-  display: none; }
+  display: none;
+  overflow-y: scroll;
+  height: calc(100vh - 84px); }
   .searchContent .search-bar {
     padding: 10px;
     background: #f4f4f4;
@@ -657,4 +666,9 @@ header {
 body {
   font: 12px/1.5 "FZLTXIHJW--GB1-0","hiragino sans gb","Helvetica Neue",Helvetica,STHeiTi,Arial;
   color: #808080;
-  background-color: #fff; }
+  background-color: #808080; }
+
+.app {
+  max-width: 420px;
+  margin: 0 auto;
+  background: #fff; }

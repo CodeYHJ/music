@@ -1,4 +1,6 @@
 .recommendContent {
+    overflow-y: scroll;
+    height: calc(100vh - 84px); 
     .recommendloading{
         text-align: center;
         font-size: 18px;
