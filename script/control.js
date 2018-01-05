@@ -87,33 +87,34 @@ export class Control{
     fetch(){
         if(this.text){
             // fetch(`http://localhost:4000/lyc?id=${this.lyc}`)
-            fetch(`https://music-mlzctytemu.now.sh/lyc?id=${this.lyc}`)
-            .then(res => res.json())
-            .then(data => {
-                alert(5);
-                let lyc = data.lyric;
-                fetch(`http:///localhost:4000/song?songmid=${this.song}&filename=C400${this.song}.m4a&guid=${this.guid}`).then(res=>res.json())
-                .then(data=>{
-                    alert(4);
-                    this.vkey = data.data.items[0].vkey;
-                    alert(3);
-                })
-                .then(()=>{alert(2);this.view({lyc,vkey:this.vkey})})
-            })           
-            .catch(error=>alert(error))
-
-            // Promise.all([
-            //     fetch(`http://localhost:4000/lyc?id=${this.lyc}`),
-            //     fetch(`http:///localhost:4000/song?songmid=${this.song}&filename=C400${this.song}.m4a&guid=${this.guid}`)
-            // ])
-            // .then(res => {Promise.all(res.map(response => response.json()))})
-            // .then(jsons =>{
-            //     let [ly,vkeyData] =jsons;
-            //     let lyc = ly.lyric,
-            //         vkey = vkeyData.data.items[0].vkey;
-            //     let obj = {lyc:lyc,vkey:vkey};
-            //     return obj
-            // }).then(data => this.view(data));
+            // fetch(`https://music-mlzctytemu.now.sh/lyc?id=${this.lyc}`)
+            // .then(res => res.json())
+            // .then(data => {
+            //     alert(5);
+            //     let lyc = data.lyric;
+            //     fetch(`http:///localhost:4000/song?songmid=${this.song}&filename=C400${this.song}.m4a&guid=${this.guid}`).then(res=>res.json())
+            //     .then(data=>{
+            //         alert(4);
+            //         this.vkey = data.data.items[0].vkey;
+            //         alert(3);
+            //     })
+            //     .then(()=>{alert(2);this.view({lyc,vkey:this.vkey})})
+            // })           
+            // .catch(error=>alert(error))
+            console.log(this.song,this.guid,this.lyc)
+            Promise.all([
+                fetch(`http://localhost:4000/lyc?id=${this.lyc}`),
+                fetch(`http://localhost:4000/song?songmid=${this.song}&filename=C400${this.song}.m4a&guid=${this.guid}`)
+            ])
+            .then(res => Promise.all(res.map(response => response.json())))
+            .then(jsons =>{
+                console.log(jsons);
+                let [ly,vkeyData] = jsons;
+                let lyc = ly.lyric,
+                    vkey = vkeyData.data.items[0].vkey;
+                let obj = {lyc:lyc,vkey:vkey};
+                return obj
+            }).then(data => this.view(data));
 
             // fetch(`http://localhost:4000/song?songmid=${this.song}&filename=C400${this.song}.m4a&guid=${guid}`)
             // .then(res=>res.json())
@@ -229,7 +230,6 @@ export class Control{
         pro.style.transform = `translateX(${percent})`;
     }
     view(obj){
-        alert(1);
         let lyc = obj.lyc,
         vkey =obj.vkey;
         // let {lyc,vkey} = obj;

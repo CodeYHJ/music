@@ -141,8 +141,8 @@
             padding: 0 px2rem(10px);
             transition: .5s;
             .lyc-item{
-                height: px2rem(42px);
-                line-height: px2rem(42px);
+                height: px2rem(120px);
+                line-height: px2rem(120px);
                 overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: nowrap;
@@ -177,6 +177,7 @@
             flex-direction: row;
             align-items: center;
             .progressBox{
+                margin: 0 px2rem(10px);
                 position: relative;
                 display: block;
                 height: px2rem(2px);
@@ -193,7 +194,7 @@
             }
             .startTime, .endTime {
                 font-size: px2rem(16px);
-                width: px2rem(55px);
+                width: px2rem(70px);
                 line-height: px2rem(40px);
                 text-align: center;
             }
