@@ -1,3 +1,4 @@
+import "../node_modules/amfe-flexible/index.min.js"
 import  './tab.js'
 import { Slides } from './recommend.js'
 import { List } from './list.js'

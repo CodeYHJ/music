@@ -1,74 +1,77 @@
+@import 'px2rem';
+
 .searchContent{
     display: none;
     overflow-y: scroll;
-    height: calc(100vh - 84px);
+    height: px2rem(1061px);
     .search-bar {
-        padding:10px;
+        height: px2rem(55px);
+        padding:px2rem(10px);
         background: #f4f4f4;
         display: flex;
         flex-direction: row;
         .input-bar {
             position: relative;
             background: #fff;
-            height: 20px;
-            padding: 8px 12px 8px 35px;
-            border-radius: 3px;
+            height: px2rem(40px);
+            padding: px2rem(8px) px2rem(12px) px2rem(8px) px2rem(35px);
+            border-radius: px2rem(3px);
             display: flex;
             align-content: center;
             flex: 1;
             .icon{
                 position: absolute;
-                top: 9px;
-                left: 10px;
-                width: 18px;
-                height: 18px;
+                top: px2rem(20px);
+                left: px2rem(10px);
+                width: px2rem(18px);
+                height: px2rem(18px);
                 background-image: url(../img/search.png);
                 background-repeat: no-repeat;
                 background-size: cover;
             }
             input{
-                height: 20px;
-                line-height: 20px;
+                height: px2rem(40px);
+                line-height: px2rem(40px);
                 width: 100%;
                 color:rgba(0,0,0,.3);
                 border: none;
-                font-size: 14px;
+                font-size: px2rem(25px);
                 outline: none;
             }
             .delet {
                 display: none;
                 position: absolute;
-                top: 9px;
-                right: 12px;
-                width: 18px;
-                height: 18px;
+                top: px2rem(20px);
+                right: px2rem(12px);
+                width: px2rem(18px);
+                height: px2rem(18px);
                 background: #b1b1b1;
-                border-radius: 99px;
+                border-radius: px2rem(99px);
                 &::before {
-                    width: 10px;
-                    height: 2px;
-                    margin-left: -5px;
-                    margin-top: -1px;                
+                    width: px2rem(10px);
+                    height: px2rem(2px);
+                    margin-left: px2rem(-5px);
+                    margin-top: px2rem(-1px);                
                     content: "";
                     display: block;
                     position: absolute;
                     left: 50%;
                     top: 50%;
-                    border-radius: 8px;
+                    border-radius: px2rem(8px);
                     background: #fff;
                     transform: rotate(45deg);
                 }
                 &::after {
-                    width: 2px;
-                    height: 10px;
-                    margin-left: -1px;
-                    margin-top: -5px;
+                    width: px2rem(2px);
+                    height: px2rem(10px);
+                    margin-left: px2rem(-1px);
+                    margin-top: px2rem(-5px);
                     content: "";
                     display: block;
                     position: absolute;
                     left: 50%;
                     top: 50%;
-                    border-radius: 8px;
+                    border-radius: px2rem(8px);
                     background: #fff;
                     transform: rotate(45deg);
                 }
@@ -76,22 +79,21 @@
         }
         .cancle {
             display: none;
-            padding-right: 10px;
-            padding-left: 10px;
-            font-size: 14px;
-            height: 36px;
-            line-height: 36px;
+            padding: 0 px2rem(10px);
+            font-size: .3rem;
+            height: px2rem(36px);
+            line-height: px2rem(55px);
         }
     }
     .onloading{
         display: none;
-        line-height: 40px;
+        line-height: px2rem(40px);
         text-align: center;
         color: #808080;
     }
     .ending{
         display: none;
-        line-height: 40px;
+        line-height: px2rem(40px);
         text-align: center;
         color: #808080;
     }

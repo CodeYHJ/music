@@ -1,19 +1,21 @@
+@import 'px2rem';
+
 .listContent {
-    margin: 10px;
+    margin: px2rem(10px);
     margin-bottom: 0;
     overflow-y: scroll;
     overflow-x: hidden;
-    height: calc(100vh - 94px); 
+    height: px2rem(1061px);
     display: none;
     .listloading{
         text-align: center;
-        font-size: 18px;
-        margin-top: 30px;
+        font-size: px2rem(18px);
+        margin-top: px2rem(30px);
     }
     .lists {
         display: block;
         .list-item {
-            margin-bottom: 10px;
+            margin-bottom: px2rem(10px);
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -24,8 +26,8 @@
                 overflow: hidden;
                 .img {
                     position: relative;
-                    width: 100px;
-                    height: 100px;
+                    width: px2rem(200px);
+                    height: px2rem(200px);
                     img{
                         display: block;
                         width: 100%;
@@ -35,26 +37,26 @@
                         display: flex;
                         flex-direction: row;
                         align-items: center;
-                        width: 65px;
-                        left: 5px;
-                        bottom: 7px;
-                        line-height: 12px;
+                        width: px2rem(65px);
+                        left: px2rem(5px);
+                        bottom: px2rem(7px);
+                        line-height: px2rem(12px);
                         color: #fff;
                         .listen-icon {
-                            width: 10px;
-                            height: 10px;
-                            margin-right: 5px;
+                            width: px2rem(10px);
+                            height: px2rem(10px);
+                            margin-right: px2rem(5px);
                             display: block;
                             background: {
-                                position: 0 -50px;
+                                position: 0 px2rem(-50px);
                                 image: url(../img/radio_list.png);
                                 repeat: no-repeat;
-                                size: 24px 60px;
+                                size: px2rem(24px) px2rem(60px);
                             }
                         }
                         .num {
-                            font-size: 9px;
-                            line-height: 12px;
+                            font-size: px2rem(9px);
+                            line-height: px2rem(12px);
                             opacity: .6;
                         }
                     }

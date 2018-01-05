@@ -1,3 +1,5 @@
+@import 'px2rem';
+
 .search-songs{
     display: flex;
     flex-direction: column;
@@ -6,29 +8,29 @@
         flex-direction: row;
         border-top: 1px solid #e5e5e5;
         .singerImg{
-            padding: 0 8px;
+            padding: 0 px2rem(8px);
             display: flex;
             align-items: center;
             img{
                 display: block;
                 width: 100%;
                 border-radius: 50%;
-                width: 40px;
-                height: 40px;
+                width: px2rem(40px);
+                height: px2rem(40px);
                 
             }
         }
         .singer{
             .name{
-                margin: 10px 0 2px;
-                line-height: 18px;
-                font-size: 16px;
+                margin: px2rem(10px) 0 px2rem(2px);
+                line-height: px2rem(18px);
+                font-size: px2rem(16px);
                 font-weight: normal;
                 color: #000;
             }
             .num{
                 color: #808080;
-                font-size: 12px;
+                font-size: px2rem(12px);
                 .songsNumber{
                     margin-right: 10px;
                     
@@ -40,30 +42,30 @@
         display: flex;
         flex-direction: row;
         border-top: 1px solid #e5e5e5;
-        height: 55px;
+        height: px2rem(65px);
         .musicLogo{
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 56px;
+            width: px2rem(56px);
             span{
                display: block;
-               width: 22px;
-               height: 20px;
+               width: px2rem(22px);
+               height: px2rem(20px);
                background: {
                    image: url(../img/search-music.png);
                    position: 0 0;
                    repeat: no-repeat;
-                   size: 22px 30px;
+                   size: px2rem(22px) px2rem(30px);
                } 
             }
         }
         .song{
             overflow: hidden;
             .songName{
-                margin: 10px 0 2px;
-                line-height: 18px;
-                font-size: 16px;
+                margin: px2rem(10px) 0 px2rem(2px);
+                line-height: px2rem(18px);
+                font-size: px2rem(20px);
                 font-weight: normal;
                 color: #000;
                 white-space: nowrap;
@@ -71,7 +73,7 @@
                 overflow: hidden;
             }
             .singer{
-                font-size: 12px;
+                font-size: .2rem;
             }
         }    
     }

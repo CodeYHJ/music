@@ -72,7 +72,25 @@ app.get('/search',async(req,res)=>{
         res.json({error: e.message})
     }
 })
-
+app.get('/song',async(req,res)=>{
+    const{ guid, songmid, filename } = req.query
+    const HEADd = {'authority':"c.y.qq.com",
+              'referer':'https://y.qq.com',
+              'accept':'*/*',
+              'user-agent': "Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1"
+            }
+    const url = `https://c.y.qq.com/base/fcgi-bin/fcg_music_express_mobile3.fcg?format=json&platform=yqq&cid=205361747&uin=0&songmid=${songmid}&filename=${filename}&guid=${guid}`
+    try{
+        res.json(await request({
+            uri:url,
+            json:true,
+            headers:HEADd
+        }))
+    }
+    catch(e){
+        res.json({error: e.message})
+    }
+})
 app.get('/lyc',async(req,res)=>{
     const { id } = req.query
     const url = `https://c.y.qq.com/lyric/fcgi-bin/fcg_query_lyric.fcg?nobase64=1&musicid=${id}&songtype=0`

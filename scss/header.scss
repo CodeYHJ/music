@@ -1,11 +1,13 @@
+@import 'px2rem';
+
 header {
-    height: 44px;
+    height: px2rem(60px);
     background-color: #31c27c;
     position: relative;
     .logo {
-        width: 90px;
-        height: 25px;
-        margin: 9px 0 0 10px;
+        width: px2rem(90px);
+        height: px2rem(25px);
+        margin: px2rem(20px) 0 0 px2rem(10px);
         float: left;
         background: {
             image: url(../img/logo.png);
@@ -14,13 +16,14 @@ header {
         }
     }
     .playStation{
-        height: 25px;
+        font-size: .3rem;
+        height: px2rem(25px);
         float: right;
-        padding: 0 10px;
-        margin: 9px 10px 0 0;
-        border: 1px solid #fff;
-        line-height: 25px;
-        border-radius: 20px;
+        padding: 0 px2rem(10px);
+        margin: px2rem(20px) px2rem(10px) 0 0;
+        border: px2rem(1px) solid #fff;
+        line-height: px2rem(25px);
+        border-radius: px2rem(20px);
 
     }
 }

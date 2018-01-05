@@ -1,0 +1,5 @@
+$width:750px;
+
+@function px2rem($px){
+    @return $px / $width * 10rem
+}

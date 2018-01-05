@@ -86,7 +86,7 @@ export class Search{
         }
 
             let htmlSongs = list.map(el => {
-                return `<li class="songs-item" data-content="interval=${el.interval}&img=${el.albummid}&song=${el.songid}&lyc=${el.songid}">
+                return `<li class="songs-item" data-content="interval=${el.interval}&img=${el.albummid}&song=${el.songmid}&lyc=${el.songid}">
                             <div class="musicLogo">
                                 <span></span>
                             </div>

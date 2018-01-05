@@ -1,5 +1,6 @@
 export class Control{
     constructor(el){
+        // el为播放界面
         this.$el = el;
         this.$audio,
         this.pre = 0;
@@ -7,6 +8,8 @@ export class Control{
         this.text;
         this.interval;
         this.img;
+        this.guid;
+        this.vkey;
         this.song;
         this.lyc;
         this.name;
@@ -26,10 +29,12 @@ export class Control{
         document.querySelector('.playStation').addEventListener('click',this.down.bind(this));
         document.querySelector('.search-songs').addEventListener('click',this.loadSong.bind(this));
     }
+    // 按首页播放器按钮，播放界面滑落
     down(){
         this.$el.style.transform = 'translateY(0)';
         document.querySelector('.search-songs').style.display = "none";
     }
+    // 播放器界面的音乐按钮，播放器隐藏
     on(){
         this.$el.style.transform = 'translateY(-200%)';
         document.querySelector('.search-songs').style.display = "flex";
@@ -37,16 +42,25 @@ export class Control{
     button(event){
         let target = event.target;
         if(target.matches('.playButton')) {
-            target.className = 'pauseButton';
+            try{
+            // target.className = 'pauseButton';
+            target.classList.remove('playButton');
+            target.classList.add('pauseButton');
             this.playtime();
             this.$audio.play();
+            }catch(err){alert(err)}
         }
         else if(target.matches('.pauseButton')) {
-            target.className = 'playButton';
+            try{
+            // target.className = 'playButton';
+            target.classList.remove('pauseButton');
+            target.classList.add('playButton');
             this.pausetime();
             this.$audio.pause();
+            }catch(err){alert(err)}
         }
     }
+    // 点击歌曲后首先运行,并处理相应数据
     loadSong(event){
         this.rect();
         let target = event.target;
@@ -61,9 +75,11 @@ export class Control{
             this.singer = node.querySelector('.singer').innerHTML;
             this.text = node.dataset.content;
         }
-
+        // 用结构赋值去定义相关参数
         [this.interval,this.img,this.song,this.lyc] = [Number(this.getSomeOne("interval")[1]),this.getSomeOne("img")[1],this.getSomeOne("song")[1],this.getSomeOne("lyc")[1]];
-
+        // 计算获得guid
+        let t = new Date().getUTCMilliseconds();
+        this.guid = (Math.round(2147483647 * Math.random()) * t) % 1e10;
         this.$el.style.transform = 'translateY(0)';
         this.fetch();
         document.querySelector('.search-songs').style.display = "none";
@@ -73,16 +89,44 @@ export class Control{
             // fetch(`http://localhost:4000/lyc?id=${this.lyc}`)
             fetch(`https://music-mlzctytemu.now.sh/lyc?id=${this.lyc}`)
             .then(res => res.json())
-            .then(data => data.lyric)
-            .then(this.view.bind(this))
+            .then(data => {
+                alert(5);
+                let lyc = data.lyric;
+                fetch(`http:///localhost:4000/song?songmid=${this.song}&filename=C400${this.song}.m4a&guid=${this.guid}`).then(res=>res.json())
+                .then(data=>{
+                    alert(4);
+                    this.vkey = data.data.items[0].vkey;
+                    alert(3);
+                })
+                .then(()=>{alert(2);this.view({lyc,vkey:this.vkey})})
+            })           
+            .catch(error=>alert(error))
+
+            // Promise.all([
+            //     fetch(`http://localhost:4000/lyc?id=${this.lyc}`),
+            //     fetch(`http:///localhost:4000/song?songmid=${this.song}&filename=C400${this.song}.m4a&guid=${this.guid}`)
+            // ])
+            // .then(res => {Promise.all(res.map(response => response.json()))})
+            // .then(jsons =>{
+            //     let [ly,vkeyData] =jsons;
+            //     let lyc = ly.lyric,
+            //         vkey = vkeyData.data.items[0].vkey;
+            //     let obj = {lyc:lyc,vkey:vkey};
+            //     return obj
+            // }).then(data => this.view(data));
+
+            // fetch(`http://localhost:4000/song?songmid=${this.song}&filename=C400${this.song}.m4a&guid=${guid}`)
+            // .then(res=>res.json())
+            // .then(data => {console.log(data)})
+
         }
     }
-    radio(){
+    radio(x){
         if(!this.$audio) this.$audio = document.createElement('audio');
         this.$el.appendChild(this.$audio);
-        this.$audio.src = `http://ws.stream.qqmusic.qq.com/${this.song}.m4a?fromtag=46`;
-        this.$audio.loop = 'loop';
+        this.$audio.src = `http://ws.stream.qqmusic.qq.com/C400${this.song}.m4a?fromtag=46&vkey=${x}&guid=${this.guid}`;
         // http://ws.stream.qqmusic.qq.com/${id}.m4a?fromtag=46
+        // this.playtime();
     }
 
     getSomeOne(el){
@@ -90,8 +134,8 @@ export class Control{
         if(el == "img") return this.text.match(/img=(\w{1,})/);
         if(el == "song") return this.text.match(/song=(\w+)/);
         if(el == "lyc") return this.text.match(/lyc=(\d{1,})/);
-        console.log(this.text);
     }
+    // 把第一次获得的歌词用正则转换成合适的规则排列
     getLyc(el){
         let div = document.createElement('div');
         div.innerHTML = el;
@@ -107,7 +151,10 @@ export class Control{
                         </div>
                         <span class="playButton"></span>`;
         this.$ablumHead.innerHTML = htmlHead;
-        document.querySelector(".background").style= `background-image:url(https://y.gtimg.cn/music/photo_new/T002R150x150M000${this.img}.jpg?max_age=2592000)`;
+        let back = `background-image:url(https://y.gtimg.cn/music/photo_new/T002R150x150M000${this.img}.jpg?max_age=2592000)`
+
+        // document.querySelector(".background").style= `background-image:url(https://y.gtimg.cn/music/photo_new/T002R150x150M000${this.img}.jpg?max_age=2592000)`;
+        document.querySelector(".background").setAttribute('style',back);
     }
     timer(time){
        let sec,min;
@@ -159,6 +206,7 @@ export class Control{
     control(){
         this.$control.querySelector('.endTime').innerHTML = this.timer(this.interval);
     }
+    // 在播放界面写入歌词报幕
     ly(){
         document.querySelector('.lyc').innerHTML = `<div class="lycText"></div>`
         let htmlLyc = this.data.map(lyc => {
@@ -180,11 +228,20 @@ export class Control{
         let percent = el/this.interval*100+"%";
         pro.style.transform = `translateX(${percent})`;
     }
-    view(el){
+    view(obj){
+        alert(1);
+        let lyc = obj.lyc,
+        vkey =obj.vkey;
+        // let {lyc,vkey} = obj;
+        // 渲染头像
         this.Head();
-        this.getLyc(el);
+        // 转换歌词格式
+        this.getLyc(lyc);
+        // 渲染歌词
         this.ly();
-        this.control(this.interval);
-        this.radio();
+        // 渲染歌曲时间
+        this.control();
+        // 建立H5 radio标签，并播放
+        this.radio(vkey);
     }
 }

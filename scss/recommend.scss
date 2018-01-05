@@ -1,10 +1,13 @@
+@import 'px2rem';
+
+$remHeight:px2rem(84px);
 .recommendContent {
     overflow-y: scroll;
-    height: calc(100vh - 84px); 
+    height: px2rem(1061px);
     .recommendloading{
         text-align: center;
-        font-size: 18px;
-        margin-top: 30px;
+        font-size: px2rem(18px);
+        margin-top: px2rem(30px);
     }
 
 }

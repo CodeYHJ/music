@@ -1,27 +1,32 @@
+@import 'px2rem';
+
 .radio {
-    margin: 0 10px 7px 10px;
+    margin: 0 px2rem(10px) px2rem(7px) px2rem(10px);
     overflow: hidden;
     h2 {
-        font-size: 16px;
+        font-size: .4rem;
         color: #000;
-        margin-bottom: 11px;
+        margin-bottom: px2rem(11px);
     } 
 }
 
 .radios {
     display: flex;
     flex-direction: row;
-    margin-right: -8px;
+    margin-right: px2rem(-8px);
     a {
-        display: block;
-        min-width: 145px;
-        padding-right: 8px;
-        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        min-width: px2rem(145px);
+        height: px2rem(500px);
+        padding-right: px2rem(8px);
+        margin-bottom: px2rem(10px);
         text-decoration: none;
         flex: 1;
         .img {
-            margin-bottom: 5px;
+            margin-bottom: px2rem(5px);
             position: relative;
+            display: flex;
             img{
                 display: block;
                 width: 100%;
@@ -29,25 +34,25 @@
             .icon {
                 position: absolute;
                 display: block;
-                height: 24px;
-                bottom: 5px;
-                right: 5px;
-                width: 24px;
+                height: px2rem(24px);
+                bottom: px2rem(5px);
+                right: px2rem(5px);
+                width: px2rem(24px);
                 background: {
                     position: 0 0;
                     image: url(../img/radio_list.png);
                     repeat: no-repeat;
-                    size: 24px 60px;
+                    size: px2rem(24px) px2rem(60px);
                 }
             }
         }
         .title {
             display: block;
-            height: 36px;
-            line-height: 18px;
-            margin: 0 7px 5px;
+            height: px2rem(36px);
+            line-height: px2rem(18px);
+            margin: 0 px2rem(7px) px2rem(5px);
             white-space: normal;
-            font-size: 14px;
+            font-size: px2rem(14px);
             text-overflow: ellipsis;
             color: #000;
         }

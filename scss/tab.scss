@@ -1,27 +1,17 @@
+@import 'px2rem';
+
 .tab {
     display: flex;
     flex-direction: row;
     flex: 1;
     text-align: center;
-    line-height: 40px;
-    font-size: 16px;
+    line-height: px2rem(60px);
+    // font-size: .3rem;
     cursor: default;
-    .recommend {
+    .recommend,.list,.search {
         flex: 1;
-        height: 40px;
-        font-size: 16px;
-        position: relative;
-    }
-    .list {
-        flex: 1;
-        height: 40px;
-        font-size: 16px;
-        position: relative;
-    }
-    .search {
-        flex: 1;
-        height: 40px;
-        font-size: 16px;
+        height: px2rem(60px);
+        font-size: .3rem;
         position: relative;
     }
     .main {
@@ -33,7 +23,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            height: 2px;
+            height: px2rem(2px);
             background: #31c27c;
         }
     }
