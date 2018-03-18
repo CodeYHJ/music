@@ -103,8 +103,10 @@ export class Control{
             // .catch(error=>alert(error))
             console.log(this.song,this.guid,this.lyc)
             Promise.all([
-                fetch(`http://localhost:4000/lyc?id=${this.lyc}`),
-                fetch(`http://localhost:4000/song?songmid=${this.song}&filename=C400${this.song}.m4a&guid=${this.guid}`)
+                // fetch(`http://localhost:3001/lyc?id=${this.lyc}`),
+                // fetch(`http://localhost:3001/song?songmid=${this.song}&filename=C400${this.song}.m4a&guid=${this.guid}`)
+                fetch(`http://www.codeyhj.cn:3001/lyc?id=${this.lyc}`),
+                fetch(`http://www.codeyhj.cn:3001/song?songmid=${this.song}&filename=C400${this.song}.m4a&guid=${this.guid}`)
             ])
             .then(res => Promise.all(res.map(response => response.json())))
             .then(jsons =>{

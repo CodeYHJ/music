@@ -51,8 +51,9 @@ export class Search{
     }
     onSearching(){
         this.onloading();
-        // fetch(`http://localhost:4000/search?keyword=${this.value}&page=${this.page}`)
-        fetch(`https://music-mlzctytemu.now.sh/search?keyword=${this.value}&page=${this.page}`)
+        // fetch(`http://localhost:3001/search?keyword=${this.value}&page=${this.page}`)
+        fetch(`http://www.codeyhj.cn:3001/search?keyword=${this.value}&page=${this.page}`)
+        // fetch(`https://music-mlzctytemu.now.sh/search?keyword=${this.value}&page=${this.page}`)
         .then(res => res.json())
         .then(sea => sea.data)
         .then(this.view.bind(this))

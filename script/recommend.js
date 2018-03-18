@@ -14,8 +14,9 @@ export class Slides {
         this.loading();
     }
     loading(){
-        // fetch('http://localhost:4000/')
-        fetch(`https://music-mlzctytemu.now.sh`)
+        // fetch('http://localhost:3001/')
+        fetch(`http://www.codeyhj.cn:3001/`)
+        // fetch(`https://music-mlzctytemu.now.sh`)
         .then(res => res.json())
         .then(rec => rec.data)
         .then( this.view.bind(this) )

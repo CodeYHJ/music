@@ -5,8 +5,9 @@ export class List{
         this.load();
     }
     load(){
-        // fetch('http://localhost:4000/list')
-        fetch(`https://music-mlzctytemu.now.sh/list`)
+        // fetch('http://localhost:3001/list')
+        fetch('http://www.codeyhj.cn:3001/list')
+        // fetch(`https://music-mlzctytemu.now.sh/list`)
         .then(res => res.json())
         .then(lis => lis.data.topList)
         .then( this.view.bind(this) )
